@@ -1,35 +1,0 @@
-
-src/App.elm,246
-module AppApp1,0
-type alias Model =type7,110
-type alias ModelModel7,110
-init path =init14,216
-type MsgMsg18,302
-    = NoOpNoOp19,311
-update msg model =update23,368
-view model =view28,438
-subscriptions model =subscriptions36,583
-
-src/Main.elm,488
-type alias BlogEntry =type8,122
-type alias BlogEntryBlogEntry8,122
-type alias Model =type16,236
-type alias ModelModel16,236
-type MsgMsg20,284
-    = BlogInfoBlogInfo21,293
-initialModel =initialModel25,364
-init flags =init29,393
-view model =view33,439
-viewBlogList blogList =viewBlogList40,568
-viewBlogEntry entry =viewBlogEntry50,787
-update msg model =update70,1333
-subscriptions model =subscriptions87,1666
-main =main92,1781
-blogDecoder =blogDecoder101,1931
-
-tests/Main.elm,18
-main =main9,158
-
-tests/Tests.elm,40
-module TestsTests1,0
-all =all10,106

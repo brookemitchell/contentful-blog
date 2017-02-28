@@ -6,6 +6,7 @@ var Elm = require('./Main.elm');
 var contentful = require('contentful')
 
 var root = document.getElementById('root');
+console.log(Elm);
 var app = Elm.Main.embed(root, logoPath);
 
 const SPACE_ID = 'txvuwty7qtti'
@@ -16,11 +17,17 @@ var client = contentful.createClient({
   accessToken: ACCESS_TOKEN
 })
 
+app.ports.updateEntry.subscribe(n => {
+  console.log(n)
+})
+
 client.getEntries().then((response) => {
-  console.log(response.items);
-  // const blogEntry = response.items[0]
-  // console.log(response.items[0]);
+  // console.log(response.items.filter(e => e.fields.body));
+  // console.log(response.items);
+  const blogPosts = response.items.filter(e => e.fields.body)
+  // console.log(response.items);
   app.ports.blogEntry.send([response.items[0]]);
+  // app.ports.blogEntry.send(blogPosts);
 
 })
   .catch((error) => {
